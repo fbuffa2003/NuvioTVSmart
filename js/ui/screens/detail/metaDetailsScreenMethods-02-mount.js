@@ -98,6 +98,7 @@ export function createMetaDetailsScreenMethods02() {
       this.watchedEpisodeKeys = new Set();
       this.autoOpenedContinueWatchingStream = false;
       this.playOnLoadTriggered = false;
+      this.playTrailerOnLoadTriggered = false;
       this.restoredContentScrollTop = 0;
       this.restoredTrackScrollLeftByKey = {};
       this.bindTrailerProxyMessaging();
