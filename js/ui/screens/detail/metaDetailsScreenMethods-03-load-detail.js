@@ -195,6 +195,7 @@ export function createMetaDetailsScreenMethods03() {
       void this.refreshLibraryMembership(token);
       this.maybeAutoOpenContinueWatchingStream();
       this.maybePlayOnLoad(token);
+      this.maybePlayTrailerOnLoad(token);
       void this.refreshTrailerSource(meta, token);
       void this.loadTraktComments({ force: true });
 

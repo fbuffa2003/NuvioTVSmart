@@ -170,6 +170,10 @@ export function createHomeScreenMethods19() {
           }
           this.markUserInteractionSinceHomePaint();
           const action = String(target.dataset.action || "");
+          if (action === "playHeroTrailer") {
+            this.openDetailFromNode(target.closest(".home-hero-card"), { playTrailerOnLoad: true });
+            return;
+          }
           if (action === "openDetail" || action === "openCollectionFolder") {
             this.openDetailFromNode(target);
             return;

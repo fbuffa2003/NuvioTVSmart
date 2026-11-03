@@ -315,6 +315,10 @@ function renderModernHeroMarkup({
             ${secondaryParts.join('<span class="home-hero-dot">•</span>')}
           </div>
           <p class="home-hero-description${display.description ? "" : " is-empty"}">${escapeHtml(display.description)}</p>
+          <button class="home-hero-play-trailer focusable" type="button" data-action="playHeroTrailer" aria-label="Play trailer">
+            <span class="home-hero-play-trailer-icon" aria-hidden="true">▶</span>
+            <span>Play trailer</span>
+          </button>
         </div>
         <div class="home-hero-indicators">${buildHeroIndicators(heroCandidates, heroItem)}</div>
       </article>

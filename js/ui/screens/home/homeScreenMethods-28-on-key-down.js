@@ -93,6 +93,7 @@ export function createHomeScreenMethods28() {
         activateLegacySidebarAction(action, "home");
         return;
       }
+      if (action === "playHeroTrailer") this.openDetailFromNode(current.closest(".home-hero-card"), { playTrailerOnLoad: true });
       if (action === "openDetail" || action === "openCollectionFolder") this.openDetailFromNode(current);
       if (action === "openCatalogSeeAll") this.openCatalogSeeAllFromNode(current);
       if (action === "resumeProgress") {
