@@ -240,7 +240,7 @@ export function createHomeScreenMethods27() {
         this.heroItem = hero;
       }
     },
-    openDetailFromNode(node) {
+    openDetailFromNode(node, options = {}) {
       if (this.resolveCollectionFolderTargetFromNode(node)) {
         this.openCollectionFolderFromNode(node);
         return;
@@ -259,7 +259,8 @@ export function createHomeScreenMethods27() {
         addonBaseUrl: node.dataset.addonBaseUrl || "",
         addonId: node.dataset.addonId || "",
         addonName: node.dataset.addonName || "",
-        catalogType: node.dataset.catalogType || node.dataset.itemType || "movie"
+        catalogType: node.dataset.catalogType || node.dataset.itemType || "movie",
+        playTrailerOnLoad: Boolean(options.playTrailerOnLoad)
       });
     },
     openCollectionFolderFromNode(node) {

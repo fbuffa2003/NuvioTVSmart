@@ -270,6 +270,18 @@ export function createMetaDetailsScreenMethods05() {
         setTimeout(start, 0);
       }
     },
+    maybePlayTrailerOnLoad(token = this.detailLoadToken) {
+      if (!this.params?.playTrailerOnLoad || this.playTrailerOnLoadTriggered || this.autoOpenedContinueWatchingStream || this.isBackNavigation) {
+        return;
+      }
+      this.playTrailerOnLoadTriggered = true;
+      const start = () => {
+        if (token !== this.detailLoadToken || !this.container || this.isBackNavigation || this.autoOpenedContinueWatchingStream) return;
+        void this.playTrailer({ muted: false, restart: true, initiatedByUser: true });
+      };
+      if (typeof requestAnimationFrame === "function") requestAnimationFrame(() => requestAnimationFrame(start));
+      else setTimeout(start, 0);
+    },
     getStreamNavigationOptions() {
       // Continue Watching mounts Detail only to resolve the Stream target. Replace
       // that transient browser-history entry too, otherwise it can resurface after

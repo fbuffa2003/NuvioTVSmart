@@ -304,6 +304,27 @@
   overflow: visible;
 }
 
+.home-screen-shell.home-layout-modern .home-hero-play-trailer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  margin-top: 20px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--secondary-color);
+  color: var(--on-secondary);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.home-screen-shell.home-layout-modern .home-hero-play-trailer.focused {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
 .home-screen-shell.home-layout-modern
   .home-modern-hero-card.is-hero-meta-enriching
   .home-modern-hero-copy {
